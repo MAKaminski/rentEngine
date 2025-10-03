@@ -1,0 +1,35 @@
+{
+  "name": "rentengine-api-tester",
+  "version": "1.0.0",
+  "description": "Testing framework for RentEngine careers API endpoint",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/main.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "dev": "ts-node src/main.ts",
+    "api:test": "ts-node src/api-tester.ts",
+    "submit": "ts-node src/submit-application.ts",
+    "generate": "ts-node src/generate-application.ts",
+    "payload": "ts-node src/payload-generator.ts",
+    "debug": "ts-node debug.ts"
+  },
+  "keywords": ["rentengine", "api", "testing"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "zod": "^3.22.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.0.0",
+    "typescript": "^5.0.0"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testMatch": ["**/__tests__/**/*.test.ts"]
+  }
+}

@@ -1,0 +1,54 @@
+import { createApplicationWithPlaceholders } from './generate-application';
+
+// Generate the exact payload for Michael Kaminski's application
+const applicationPayload = createApplicationWithPlaceholders();
+
+console.log('🎯 RentEngine Application Payload');
+console.log('================================');
+console.log('');
+console.log('📋 Application Data:');
+console.log(JSON.stringify(applicationPayload, null, 2));
+console.log('');
+console.log('🔗 cURL Command:');
+console.log('===============');
+console.log(`curl https://app.rentengine.io/api/public/v1/careers/apply \\`);
+console.log(`  -H 'Content-Type: application/json' \\`);
+console.log(`  -d '${JSON.stringify(applicationPayload)}'`);
+console.log('');
+console.log('🐍 Python Command:');
+console.log('==================');
+console.log('import requests');
+console.log('');
+console.log(`payload = ${JSON.stringify(applicationPayload, null, 4)}`);
+console.log('');
+console.log('response = requests.post(');
+console.log('    "https://app.rentengine.io/api/public/v1/careers/apply",');
+console.log('    json=payload,');
+console.log('    timeout=10');
+console.log(')');
+console.log('');
+console.log('print(f"Status: {response.status_code}")');
+console.log('print(f"Response: {response.json()}")');
+console.log('');
+console.log('📝 Required Actions Before Submission:');
+console.log('=====================================');
+console.log('1. Replace placeholder URLs with actual values:');
+console.log('   - githubUrl: Get from your GitHub profile');
+console.log('   - portfolioUrl: Your personal website/portfolio');
+console.log('   - linkedinUrl: Your LinkedIn profile URL');
+console.log('   - cvUrl: Upload CV to Google Drive and get shareable link');
+console.log('   - resumeUrl: Upload resume to Google Drive and get shareable link');
+console.log('');
+console.log('2. Review and customize generated content:');
+console.log('   - Cover letter: Personalize for RentEngine');
+console.log('   - Additional info: Add any specific details');
+console.log('   - Experience: Verify accuracy');
+console.log('   - Skills: Ensure completeness');
+console.log('');
+console.log('3. Test with the API tester first:');
+console.log('   npm run api:test -- live');
+console.log('');
+console.log('4. Submit the application:');
+console.log('   npm run submit');
+
+export { applicationPayload };
